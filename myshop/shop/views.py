@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Category, Product
 
+# View to list all the products
+# Or filter products by a given category
 def product_list(request, category_slug=None):
     category = None
     categories = Category.objects.all()
@@ -13,3 +15,13 @@ def product_list(request, category_slug=None):
                   {'category': category,
                    'categories': categories,
                    'products': products})
+
+# view to retrieve and display a single product
+def product_detail(request, id, slug):
+    product = get_object_or_404(Product,
+                                id=id,
+                                slug=slug,
+                                available=True)
+    return render(request,
+                  'shop/product/detail.html',
+                  {'product': product})
