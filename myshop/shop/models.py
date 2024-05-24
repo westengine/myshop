@@ -9,7 +9,7 @@ class Category(models.Model):
         ordering = ['name']
         indexes = [
             models.Index(fields=['name']),
-            ]
+        ]
         verbose_name = 'category'
         verbose_name_plural = 'categories'
     
