@@ -72,6 +72,11 @@ TEMPLATES = [
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+# Key for storing the cart in the user session
+CART_SESSION_ID = 'cart'
+# Since Django sessions are managed per visitor,
+# I can use the same cart sessionn key for all sessions.
+
 WSGI_APPLICATION = 'myshop.wsgi.application'
 
 
