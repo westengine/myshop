@@ -15,7 +15,6 @@ class Cart:
             cart = self.session[settings.CART_SESSION_ID] = {}
         self.cart = cart
 
-    # method to add products to the cart or update their quantity
     def add(self, product, quantity=1, override_quantity=False):
         """
         Add a product to the cart or updates its quantity.
@@ -33,7 +32,6 @@ class Cart:
         # mark the session as "modified" to make sure it gets saved
         self.session.modified = True
     
-    # method for removing products from the cart
     def remove(self, product):
         """
         Remove a product from the cart.
